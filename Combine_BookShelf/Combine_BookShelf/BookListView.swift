@@ -11,8 +11,21 @@ struct BookListView: View {
     @StateObject var viewModel = BookViewModel()
     
     var body: some View {
-        List(viewModel.books) { book in
-            BookListRowView(book: book)
+        NavigationStack{
+            List(viewModel.filteredBooks) { book in
+                BookListRowView(book: book)
+            }
+            .searchable(text: $viewModel.searchTerm)
+            .textInputAutocapitalization(.none)
+//            .refreshable {
+//                await viewModel.fetchData()
+//            }
+//            .overlay {
+//                if viewModel.fetching {
+//                    ProgressView("Fetching data, please wait...")
+//                        .progressViewStyle(CircularProgressViewStyle())
+//                }
+//            }
         }
     }
 }

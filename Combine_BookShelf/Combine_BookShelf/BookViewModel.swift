@@ -31,4 +31,11 @@ class BookViewModel: ObservableObject {
             }
             .assign(to: &$filteredBooks)
     }
+    
+    func fetchData() async {
+        fetching = true
+        books.removeAll()
+        books = Book.samples
+        fetching = false
+    }
 }
