@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct BookListView: View {
+    @StateObject var viewModel = BookViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(viewModel.books) { book in
+            BookListRowView(book: book)
         }
-        .padding()
     }
 }
 
