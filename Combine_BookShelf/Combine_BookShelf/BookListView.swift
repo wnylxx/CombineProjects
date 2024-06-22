@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookListView: View {
-    @StateObject var viewModel = BookViewModel()
+    @StateObject private var viewModel = BookViewModel()
     
     var body: some View {
         NavigationStack{
