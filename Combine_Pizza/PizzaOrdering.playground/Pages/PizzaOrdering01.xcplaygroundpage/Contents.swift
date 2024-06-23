@@ -35,7 +35,11 @@ NotificationCenter.default.post(name: .didUpdateOrderStatus,
                                 object: pizzaOrder,
                                 userInfo: ["status": OrderStatus.processing])
 
+NotificationCenter.default.post(name: .didUpdateOrderStatus,
+                                object: pizzaOrder,
+                                userInfo: ["status": OrderStatus.delivered])
+
 
 print("Order_2: \(pizzaOrder.status)")
 
-// asign을 통해 post받은 status를 적용시켜줌
+// post를 2개 주면?
