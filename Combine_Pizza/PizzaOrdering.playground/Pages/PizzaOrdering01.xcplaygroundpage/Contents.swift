@@ -8,8 +8,12 @@ let pizzaOrderPublisher = NotificationCenter.default
                object: pizzaOrder)
 
 pizzaOrderPublisher.sink { notification in
-    print(notification)
-    dump(notification)
+    Task {
+        try? await Task.sleep(for: .seconds(2))
+        print("-----------notification start-------------------")
+        dump(pizzaOrder)
+        print("-----------notification end-------------------")
+    }
 }
 
 pizzaOrderPublisher.map { notification in
@@ -19,12 +23,19 @@ pizzaOrderPublisher.map { notification in
     print("Order status [\(orderStatus)]")
 }
 
+pizzaOrderPublisher.compactMap { notification in
+    notification.userInfo?["status"] as? OrderStatus
+}
+.assign(to: \.status, on: pizzaOrder)
+
+print("Order: \(pizzaOrder.status)")
+
+
 NotificationCenter.default.post(name: .didUpdateOrderStatus,
                                 object: pizzaOrder,
                                 userInfo: ["status": OrderStatus.processing])
 
 
-print("Order: \(pizzaOrder.status)")
+print("Order_2: \(pizzaOrder.status)")
 
-//현재 코드에서는 pizzaOrder.status 상태가 실제로 변경된 것이 아니라, 
-//NotificationCenter를 통해 OrderStatus.processing 상태를 포함하는 알림이 게시된 것을 확인하는 상태
+// asign을 통해 post받은 status를 적용시켜줌
