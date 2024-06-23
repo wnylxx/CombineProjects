@@ -12,6 +12,8 @@
 		182B62B72C284C78002BB770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B62B62C284C78002BB770 /* Assets.xcassets */; };
 		182B62BA2C284C78002BB770 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B62B92C284C78002BB770 /* Preview Assets.xcassets */; };
 		182B62C32C284F6A002BB770 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B62C22C284F6A002BB770 /* NewsItem.swift */; };
+		182B62C52C285441002BB770 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B62C42C285441002BB770 /* NewsViewModel.swift */; };
+		182B62C72C2854E7002BB770 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B62C62C2854E7002BB770 /* NewsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		182B62C02C284D78002BB770 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		182B62C12C284F1C002BB770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		182B62C22C284F6A002BB770 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		182B62C42C285441002BB770 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		182B62C62C2854E7002BB770 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				182B62C12C284F1C002BB770 /* Info.plist */,
 				182B62B22C284C77002BB770 /* NaverNewsAPIApp.swift */,
 				182B62B42C284C77002BB770 /* ContentView.swift */,
+				182B62C62C2854E7002BB770 /* NewsService.swift */,
+				182B62C42C285441002BB770 /* NewsViewModel.swift */,
 				182B62C22C284F6A002BB770 /* NewsItem.swift */,
 				182B62B62C284C78002BB770 /* Assets.xcassets */,
 				182B62B82C284C78002BB770 /* Preview Content */,
@@ -144,9 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B62C72C2854E7002BB770 /* NewsService.swift in Sources */,
 				182B62B52C284C77002BB770 /* ContentView.swift in Sources */,
 				182B62C32C284F6A002BB770 /* NewsItem.swift in Sources */,
 				182B62B32C284C77002BB770 /* NaverNewsAPIApp.swift in Sources */,
+				182B62C52C285441002BB770 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
